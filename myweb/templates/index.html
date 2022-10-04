@@ -1,0 +1,410 @@
+{% load static %}{%static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Business-Area Recommender</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Travello template project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+	<link href="{%static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+	<link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+	<link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+	<link rel="stylesheet" type="text/css" href="{%static 'styles/main_styles.css' %}">
+	<link rel="stylesheet" type="text/css" href="{%static 'styles/responsive.css' %}">
+</head>
+<body>
+	<div class="super_container">
+
+		<!-- Header -->
+
+		<header class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="header_content d-flex flex-row align-items-center justify-content-start">
+							<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+								<div class="logo"><a href="{% url 'home' %}">Business-Area Recommender</a></div>
+								<nav class="main_nav">
+									<ul class="d-flex flex-row align-items-start justify-content-start">
+										<li class="active"><a href="{% url 'home' %}">Home</a></li>
+										<li><a href="{% url 'about' %}">About us</a></li>
+										<li><a href="{% url 'contact' %}">Contact</a></li>
+									</ul>
+								</nav>
+								<div class="header_phone ml-auto">Call us: +972-59 582 246 44</div>
+
+								<!-- Hamburger -->
+
+								<div class="hamburger ml-auto">
+									<i class="fa fa-bars" aria-hidden="true"></i>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- Menu -->
+
+		<div class="menu">
+			<div class="menu_header d-flex flex-row align-items-center justify-content-start">
+				<div class="menu_logo"><a href="index.html">Business-Area Recommender</a></div>
+				<div class="menu_close_container ml-auto">
+					<div class="menu_close">
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+			</div>
+			<div class="menu_content">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About us</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Home -->
+
+		<div class="home">
+
+			<!-- Home Slider -->
+			<div class="home_slider_container">
+				<div class="owl-carousel owl-theme home_slider">
+
+					<!-- Slide -->
+					<div class="owl-item">
+						<div class="background_image"
+							style="background-image:url({% static 'images/Gll.jpg' %})"></div>
+						<div class="home_slider_content_container">
+							<div class="container">
+								<div class="row">
+									<div class="col">
+										<div class="home_slider_content">
+											<div class="home_title">
+												<h2>Let us help you</h2>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Slide -->
+					<div class="owl-item">
+						<div class="background_image" data-parallax="scroll"
+							style="background-image:url({% static 'images/Gll1.jpg' %})"></div>
+						<div class="home_slider_content_container">
+							<div class="container">
+								<div class="row">
+									<div class="col">
+										<div class="home_slider_content">
+											<div class="home_title">
+												<h2>Let us help you </h2>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Slide -->
+					<div class="owl-item">
+						<div class="background_image"
+							style="background-image:url({% static 'images/Gll2.jpg' %})"></div>
+						<div class="home_slider_content_container">
+							<div class="container">
+								<div class="row">
+									<div class="col">
+										<div class="home_slider_content">
+											<div class="home_title">
+												<h2>Let us help you </h2>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Search -->
+
+		<div class="home_search">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_search_container">
+							<div class="home_search_title">Search </div>
+                                      
+							<div class="home_search_content">
+								<p style="color:black;">Search for the perfect business:-</p>
+								<form action="handle_data" class="home_search_form" id="home_search_form">
+									<div
+										class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+
+                                        <input type="number" class="search_input search_input_1" id="quantity" name="quantity" min="1" max="5" placeholder="enter capital degree (between 1 and 5)" 
+                                        required="required"> <br/>
+                            
+                                        <select id="areas" class="search_input search_input_2" name="areas" placeholder="choose the area"
+                                        required="required" >
+                                            <option value="24026">24026</option>
+                                            <option value="24105">24105</option>
+                                            <option value="24042">24042</option>
+                                            <option value="24040">24040</option>
+                                            <option value="24039">24039</option>
+                                            <option value="24034">24034</option>
+                                            <option value="24028">24028</option>
+                                            <option value="24049">24049</option>
+                                            <option value="24010">24010</option>
+                                            <option value="24011">24011</option>
+                                            <option value="24021">24021</option>
+                                            <option value="24069">24069</option>
+                                            <option value="24048">24048</option>
+                                            <option value="24017">24017</option>
+                                            <option value="24016">24016</option>
+                                            <option value="24045">24045</option>
+                                            <option value="24072">24072</option>
+                                            <option value="24075">24075</option>
+                                            <option value="24063">24063</option>
+                                            <option value="24057">24057</option>
+                                            <option value="24046">24046</option>
+                                            <option value="24054">24054</option>
+                                            <option value="24008">24008</option>
+                                            <option value="24061">24061</option>
+                                            <option value="24004">24004</option>
+                                            <option value="24038">24038</option>
+                                            <option value="24104">24104</option>
+                                            <option value="24055">24055</option>
+                                            <option value="24053">24053</option>
+                                            <option value="24032">24032</option>
+                                            <option value="24022">24022</option>
+                                            <option value="24035">24035</option>
+                                            <option value="24007">24007</option>
+                                            <option value="24078">24078</option>
+                                            <option value="24009">24009</option>
+                                            <option value="24024">24024</option>
+                                            <option value="24041">24041</option>
+                                            <option value="24059">24059</option>
+                                            <option value="24047">24047</option>
+                                            <option value="24058">24058</option>
+                                            <option value="24064">24064</option>
+                                            <option value="24001">24001</option>
+                                            <option value="24002">24002</option>
+                                            <option value="24029">24029</option>
+                                            <option value="24005">24005</option>
+                                            <option value="24076">24076</option>
+                                            <option value="24079">24079</option>
+                                            <option value="24067">24067</option>
+                                            <option value="24110">24110</option>
+                                            <option value="24103">24103</option>
+                                            <option value="24036">24036</option>
+                                            <option value="24003">24003</option>
+                                            <option value="24030">24030</option>
+                                            <option value="24052">24052</option>
+                                            <option value="24006">24006</option>
+                                            <option value="24051">24051</option>
+                                            <option value="24060">24060</option>
+                                            <option value="24107">24107</option>
+                                            <option value="24068">24068</option>
+                                            <option value="24106">24106</option>
+                                            <option value="24031">24031</option>
+                                            <option value="24037">24037</option>
+                                            <option value="24101">24101</option>
+                                            <option value="24015">24015</option>
+                                            <option value="24111">24111</option>
+                                            <option value="24109">24109</option>
+                                            <option value="24108">24108</option>
+                                            <option value="24102">24102</option>
+                                            <option value="24013">24013</option>
+                                            <option value="24012">24012</option>
+                                            <option value="24014">24014</option>
+                                        </select>
+                                        <select id="street" name="street" class="search_input search_input_3" placeholder="Arrival"
+                                        required="required">
+                                            <option value="main_street">rafidia street</option>
+                                            <option value="main-substreet">tulkarem street</option>
+                                            <option value="main-substreet">Al Marij Street</option>
+                                            <option value="main_street">zawata center</option>
+                                            <option value="main_street">bet wazan</option>
+                                            <option value="main-substreet">15-street</option>
+                                            <option value="main-substreet">16-street</option>
+                                            <option value="main-substreet">omar ibn khatab</option>
+                                            <option value="main-substreet">takhasusy</option>
+                                            <option value="main-substtreet">abd alhamed mahmoud</option>
+                                            <option value="main-substreet">wadi-Tuffah</option>
+                                            <option value="main_street">old an najah uni.</option>
+                                            <option value="main_street">jarusalem</option>
+                                            <option value="main-substreet">blibleh</option>
+                                            <option value="main-substreet">malhes</option>
+                                            <option value="main-substreet">makhfeyah</option>
+                                            <option value="main-substreet">zawata albalad</option>
+                                            <option value="main-substreet">aljened</option>
+                                            <option value="main-substreet">ala'a alden</option>
+                                            <option value="main-substreet">ma'ageen</option>
+                                            <option value="main-substreet">alshuhada mosque</option>
+                                            <option value="main_street">falasten street</option>
+                                            <option value="main-substreet">salah mosque / altour</option>
+                                            <option value="main-substreet">mahmoud abas</option>
+                                            <option value="substreet">altety</option>
+                                            <option value="substreet">alhureya street</option>
+                                            <option value="main_street">omar almukhtar</option>
+                                            <option value="main_street">fesal</option>
+                                            <option value="main-substreet">toqqan street</option>
+                                            <option value="main_street">faiez almasry</option>
+                                            <option value="main-substreet">alanbeya street</option>
+                                            <option value="main-substreet">badran street</option>
+                                            <option value="main_street">sofian street</option>
+                                            <option value="substreet">almadares</option>
+                                            <option value="substreet">alkaber mosque</option>
+                                            <option value="main_street">yaffa street</option>
+                                            <option value="main_street">hafia street</option>
+                                            <option value="main-substreet">alameer mohamad</option>
+                                            <option value="main-substreet">shwetreh street</option>
+                                            <option value="substreet">alsekah street</option>
+                                            <option value="main-substreet">asira street</option>
+                                            <option value="main_street">amaan street</option>
+                                            <option value="main-substreet">ibn alrasheed</option>
+                                            <option value="main_street">alshuhada center</option>
+                                        </select>
+										<button class="home_search_button">search</button>
+									</div>
+								</form>
+								<p style="color:black;">Search for the perfect areas :-</p>
+								<form action="handle_data2" class="home_search_form" id="home_search_form">
+									<div
+										class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+
+                                        <select id="business" class="search_input search_input_2" name="business" placeholder="choose the business"
+                                        required="required" >
+                                            <option value="1010">1010</option>
+                                            <option value="3211">3211</option>
+                                            <option value="4630">4630</option>
+                                            <option value="4663">4663</option>
+                                            <option value="4711">4711</option>
+                                            <option value="4752">4752</option>
+                                            <option value="4759">4759</option>
+                                            <option value="4771">4771</option>
+                                            <option value="4773">4773</option>
+                                            <option value="4791">4791</option>
+                                            <option value="5610">5610</option>
+                                            <option value="6020">6020</option>
+                                            <option value="9521">9521</option>
+                                            <option value="1622">1622</option>
+                                            <option value="2511">2511</option>
+                                            <option value="4100">4100</option>
+                                            <option value="4329">4329</option>
+                                            <option value="4510">4510</option>
+                                            <option value="4721">4721</option>
+                                            <option value="4753">4753</option>
+                                            <option value="4761">4761</option>
+                                            <option value="4762">4762</option>
+                                            <option value="7310">7310</option>
+                                            <option value="8121">8121</option>
+                                            <option value="9602">9602</option>
+                                            <option value="2592">2592</option>
+                                            <option value="2220">2220</option>
+                                            <option value="4322">4322</option>
+                                            <option value="7410">7410</option>
+                                            <option value="9312">9312</option>
+                                            <option value="2670">2670</option>
+                                            <option value="3311">3311</option>
+                                            <option value="1511">1511</option>
+                                            <option value="4774">4774</option>
+                                            <option value="9511">9511</option>
+                                            <option value="4730">4730</option>
+                                            <option value="9512">9512</option>
+                                            <option value="2591">2591</option>
+                                            <option value="1512">1512</option>
+                                            <option value="4723">4723</option>
+                                            <option value="1430">1430</option>
+                                            <option value="3100">3100</option>
+                                            <option value="4751">4751</option>
+                                            <option value="7420">7420</option>
+                                            <option value="8549">8549</option>
+                                            <option value="4610">4610</option>
+                                            <option value="1410">1410</option>
+                                            <option value="3520">3520</option>
+                                            <option value="2159">2159</option>
+                                            <option value="4659">4659</option>
+                                            <option value="8020">8020</option>
+                                            <option value="8110">8110</option>
+                                            <option value="4662">4662</option>
+                                            <option value="7912">7912</option>
+                                            <option value="7020">7020</option>
+                                            <option value="9000">9000</option>
+                                            <option value="9529">9529</option>
+                                            <option value="5310">5310</option>
+                                            <option value="4763">4763</option>
+                                            <option value="4620">4620</option>
+                                            <option value="7490">7490</option>
+                                            <option value="1050">1050</option>
+                                            <option value="4321">4321</option>
+                                            <option value="9329">9329</option>
+                                            <option value="3250">3250</option>
+                                            <option value="5510">5510</option>
+                                            <option value="1520">1520</option>
+                                            <option value="4530">4530</option>
+                                            <option value="5630">5630</option>
+                                            <option value="1073">1073</option>
+                                            <option value="8219">8219</option>
+											<option value="1030">1030</option>
+											<option value="4741">4741</option>
+											<option value="4772">4772</option>
+											<option value="4789">4789</option>
+											<option value="9522">9522</option>
+											<option value="1709">1709</option>
+											<option value="4520">4520</option>
+											<option value="4652">4652</option>
+											<option value="9601">9601</option>
+											<option value="1079">1079</option>
+											<option value="4649">4649</option>
+											<option value="5210">5210</option>
+											<option value="4764">4764</option>
+											<option value="7911">7911</option>
+											<option value="8292">8292</option>
+											<option value="7710">7710</option>
+											<option value="4330">4330</option>
+											<option value="5229">5229</option>
+											<option value="1071">1071</option>
+											<option value="4641">4641</option>
+                                        </select>
+										<button class="home_search_button">search</button>
+									</div>
+								</form>
+							</div>
+							
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+		
+	</div>
+
+	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+	<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+	<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+	<script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+	<script src="{% static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
+	<script src="{% static 'plugins/easing/easing.js' %}"></script>
+	<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+	<script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>
